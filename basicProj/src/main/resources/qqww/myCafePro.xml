@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+	<context:property-placeholder location="classpath:aass/coffeeMenu.properties"/>
+	
+	
+	<bean class="di_p.CafePro" name="order1" p:menu="${americano}" p:cnt="3"/>
+	<bean class="di_p.CafePro" name="order2" p:menu="${africano}" p:cnt="2"/>
+	<bean class="di_p.CafePro" name="order3" p:menu="${americano}" p:cnt="4"/>
+	<bean class="di_p.CafePro" name="order4" p:menu="${asiano}" p:cnt="5"/>
+	<bean class="di_p.CafePro" name="order5" p:menu="${americano}" p:cnt="1"/>
+	<bean class="di_p.CafePro" name="order6" p:menu="${africano}" p:cnt="2"/>
+
+	
+</beans>
