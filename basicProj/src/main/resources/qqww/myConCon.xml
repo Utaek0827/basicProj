@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="cam1" class="di_p.Camera">
+		<property name="name" value="수중카메라"/>
+		<property name="pixel" value="11"/>
+	</bean>
+	
+	<bean id="bb1" class="di_p.Battery">
+
+	</bean>
+	
+<!--	프로퍼티 간단하게 쓰기-->
+	<bean id="hp1" class="di_p.HandPhone" p:name="태양" p:fc-ref="cam1"/>
+	
+<!--	생성자 넣기-->
+	<bean id="hp2" class="di_p.HandPhone">
+		<constructor-arg name="name" value="솔"></constructor-arg>
+	</bean>
+
+	<bean id="hp3" class="di_p.HandPhone">
+		<constructor-arg value="88라이트"></constructor-arg>
+	</bean>
+	
+<!--	그냥 1234로 넣으면 String으로 들어가서 name 지정-->
+	<bean id="hp4" class="di_p.HandPhone">
+		<constructor-arg name="price" value="1234"></constructor-arg>
+	</bean>
+	
+	<bean id="hp5" class="di_p.HandPhone">
+		<constructor-arg value="오마샤리프"/>
+		<constructor-arg value="5678"/>
+	</bean>
+	
+	<bean id="hp6" class="di_p.HandPhone">
+		<constructor-arg value="아리랑"/>
+		<constructor-arg ref="cam1"/>
+		<constructor-arg ref="bb1"/>
+	</bean>
+	
+<!--	<bean id="hp7" class="di_p.HandPhone">-->
+<!--		<constructor-arg value="아리랑"/>-->
+<!--		<constructor-arg value="어리랑"/>-->
+<!--	</bean>-->
+		
+	
+</beans>

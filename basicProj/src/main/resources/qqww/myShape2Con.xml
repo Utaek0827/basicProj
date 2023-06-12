@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean name="arr1" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="di_p.Shape2" name="sh1">
+	        		<constructor-arg name="x" value="5"/>
+	      		</bean>
+	      		<bean class="di_p.Shape2" name="sh2">
+	        		<constructor-arg name="x" value="6"/>
+	      		</bean>
+	      		<bean class="di_p.Shape2" name="sh3">
+	        		<constructor-arg name="x" value="8"/>
+	      		</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+
+	
+	<bean name="arr3" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="di_p.Shape2" name="sh1">
+	        		<constructor-arg name="x" value="5"/>
+	        		<constructor-arg name="y" value="6"/>
+	        		<constructor-arg name="z" value="7"/>
+	      		</bean>
+	      		<bean class="di_p.Shape2" name="sh2">
+	        		<constructor-arg name="x" value="8"/>
+	        		<constructor-arg name="y" value="9"/>
+	        		<constructor-arg name="z" value="10"/>	      		
+	        	</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+
+
+	
+	<bean class="di_p.Shape2" name="one1">
+	        <constructor-arg name="x" value="5"/>
+	</bean>
+	
+	<bean class="di_p.Shape2" name="squ1">
+	        <constructor-arg name="x" value="5"/>
+	        <constructor-arg name="y" value="6"/>
+	</bean>
+	<bean class="di_p.Shape2" name="try1">
+	        <constructor-arg name="x" value="5"/>
+	        <constructor-arg name="y" value="6"/>
+	        <constructor-arg name="z" value="7"/>
+	</bean>
+	
+	<bean class="di_p.Shape2" name="one2">
+	        <constructor-arg name="x" value="8"/>
+	</bean>
+	<bean class="di_p.Shape2" name="squ2">
+	        <constructor-arg name="x" value="8"/>
+	        <constructor-arg name="y" value="9"/>
+	</bean>
+	<bean class="di_p.Shape2" name="try2">
+	        <constructor-arg name="x" value="8"/>
+	        <constructor-arg name="y" value="9"/>
+	        <constructor-arg name="z" value="10"/>
+	</bean>
+	
+	<bean class="di_p.Shape2" name="one3">
+	        <constructor-arg name="x" value="10"/>
+	</bean>
+	<bean class="di_p.Shape2" name="squ3">
+	        <constructor-arg name="x" value="11"/>
+	        <constructor-arg name="y" value="12"/>
+	</bean>
+	<bean class="di_p.Shape2" name="try3">
+	        <constructor-arg name="x" value="11"/>
+	        <constructor-arg name="y" value="12"/>
+	        <constructor-arg name="z" value="13"/>
+	</bean>
+
+	
+	<bean class="di_p.MultiShape" name="msp">
+		<property name="mms">
+			<map>
+				<entry>
+					<key><value>원</value></key>
+					<ref bean="arr1"/>
+				</entry>
+				<entry>
+					<key><value>사각형</value></key>
+						<bean name="arr2" class="java.util.ArrayList">
+							<constructor-arg>
+								<list>
+									<bean class="di_p.Shape2" name="sh1">
+						        		<constructor-arg name="x" value="5"/>
+						        		<constructor-arg name="y" value="6"/>
+						      		</bean>
+						      		<bean class="di_p.Shape2" name="sh2">
+						        		<constructor-arg name="x" value="8"/>
+						        		<constructor-arg name="y" value="9"/>
+						      		</bean>
+								</list>
+							</constructor-arg>
+						</bean>
+				</entry>
+				<entry>
+					<key><value>삼각형</value></key>
+					<ref bean="arr3"/>
+				</entry>
+			</map>
+		</property>	
+	</bean>
+
+
+
+	<bean class="di_p.MultiShape2" name="msp2" p:name="원">
+		<property name="bbs">
+			<list>
+				<ref bean="one1"/>
+				<ref bean="one1"/>
+				<ref bean="one1"/>
+				<ref bean="squ1"/>
+				<ref bean="squ2"/>
+				<ref bean="squ3"/>	
+				<ref bean="try1"/>
+				<ref bean="try2"/>
+				<ref bean="try3"/>								
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

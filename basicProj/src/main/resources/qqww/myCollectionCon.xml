@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean name="arr1" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>11</value>
+				<value>22</value>
+				<value>33</value>
+				<value>44</value>
+				<value>11</value>
+				<value>66</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="ss1" class="java.util.HashSet">
+		<constructor-arg>
+			<set>
+				<value>11</value>
+				<value>22</value>
+				<value>33</value>
+				<value>22</value>
+				<value>11</value>
+				<value>66</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="mm1" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry>
+					<key>
+						<value>호당이</value>
+					</key>
+					<value>포유류</value>
+				</entry>
+				
+				<entry>
+					<key>
+						<value>독수디</value>
+					</key>
+					<value>도류</value>
+				</entry>
+				
+				<entry>
+					<key>
+						<value>호당이</value>
+					</key>
+					<value>고냥이</value>
+				</entry>
+				
+				<entry>
+					<key>
+						<value>고대</value>
+					</key>
+					<value>포유류</value>
+				</entry>
+
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="di_p.ColData" name="cd1">
+		<property name="nums">
+			<array>
+				<value>34</value>
+				<value>67</value>
+				<value>89</value>
+				<value>52</value>
+			</array>
+		</property>	
+		<property name="names" value="사공,성진,찬빈,승렬"></property>
+			
+	</bean>
+	
+	<bean class="di_p.Battery" name="bt1" p:name="일반배터리" p:plugin="true"></bean>
+	<bean class="di_p.Battery" name="bt2" p:name="대용량배터리" p:plugin="false"></bean>
+	<bean class="di_p.Battery" name="bt3" p:name="사랑의배터리" p:plugin="false"></bean>
+
+	<bean class="di_p.Camera" name="ca1" p:name="일반카메라" p:pixel="50"></bean>
+	<bean class="di_p.Camera" name="ca2" p:name="이반카메라" p:pixel="60"></bean>
+	<bean class="di_p.Camera" name="ca3" p:name="삼반카메라" p:pixel="70"></bean>
+	<bean class="di_p.Camera" name="ca4" p:name="사반카메라" p:pixel="80"></bean>
+
+
+	
+	<bean class="di_p.MultiPhone" name="mph" p:name="유택">
+		<property name="bbs">
+			<list>
+				<ref bean="bt1"/>
+				<ref bean="bt2"/>
+				<ref bean="bt3"/>								
+			</list>
+		</property>
+		<property name="mms">
+			<map>
+				<entry>
+					<key><value>왼쪽</value></key>
+					<ref bean="ca1"/>
+				</entry>
+				<entry>
+					<key><value>오른쪽</value></key>
+					<ref bean="ca2"/>
+				</entry>
+				<entry>
+					<key><value>왼쪽</value></key>
+					<ref bean="ca3"/>
+				</entry>
+				<entry>
+					<key><value>가운데</value></key>
+					<ref bean="ca4"/>
+				</entry>
+				<entry>
+					<key><value>오른쪽</value></key>
+					<ref bean="ca4"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	
+	
+</beans>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
+
+	<bean class="di_p.Cafe" name="c1">
+			<lookup-method name="am" bean="am1"/> 
+			<lookup-method name="af" bean="af1"/> 
+			<lookup-method name="ai" bean="ai1"/> 
+			
+			<lookup-method name="amList" bean="amList"/> 
+			<lookup-method name="afSet" bean="afSet"/> 
+			<lookup-method name="aiMap" bean="aiMap"/> 
+	</bean>
+	
+
+	
+	<bean class="di_p.Am" name="am1">
+		<property name="name" value="미국"/>
+		<property name="price" value="3000"/>
+	</bean>
+	
+	<bean class="di_p.Am" name="am2">
+		<property name="name" value="한국"/>
+		<property name="price" value="2000"/>
+	</bean>
+	
+	
+	<bean class="di_p.Af" name="af1">
+		<property name="name" value="한국"/>
+		<property name="price" value="1000"/>
+	</bean>
+	
+	<bean class="di_p.Af" name="af2">
+		<property name="name" value="미국"/>
+		<property name="price" value="2000"/>
+	</bean>
+	
+	<bean class="di_p.Ai" name="ai1">
+		<property name="name" value="미국"/>
+		<property name="price" value="3500"/>
+	</bean>
+	
+	<bean class="di_p.Ai" name="ai2">
+		<property name="name" value="한국"/>
+		<property name="price" value="5500"/>
+	</bean>
+	
+	
+	
+	
+	<bean class="di_p.AmList" name="amList">
+		<property name="res">
+			<list>
+				<ref bean="am1"/>
+				<ref bean="am2"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<bean class="di_p.AfSet" name="afSet">
+		<property name="res">
+			<set>
+				<ref bean="af1"/>
+				<ref bean="af2"/>
+			</set>
+		</property>
+	</bean>
+	
+	
+	<bean class="di_p.AiMap" name="aiMap">
+		<property name="res">
+			<map>
+				<entry>
+					<key><value>1</value></key>
+						<ref bean="ai1"/>
+				</entry>
+				<entry>
+					<key><value>2</value></key>
+						<ref bean="ai2"/>
+				</entry>
+			</map>
+		</property>	
+	</bean>
+	
+
+	
+</beans>

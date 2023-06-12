@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	
+	<bean class="di_p.Ban" name="ban1">
+		<constructor-arg>
+	    	<list>
+				<bean class="di_p.Stu" name="st1">
+	        		<constructor-arg name="name" value="장동건"/>
+	        		<constructor-arg name="jum" value="34,67,89,80"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st2">
+	        		<constructor-arg name="name" value="장서건"/>
+	        		<constructor-arg name="jum" value="74,77,99"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st3">
+	        		<constructor-arg name="name" value="장남건"/>
+	        		<constructor-arg name="jum" value="67,68,81,19"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st4">
+	        		<constructor-arg name="name" value="장북건"/>
+	        		<constructor-arg name="jum" value="56,72,49"/>
+	      		</bean>
+	    	</list>
+		</constructor-arg>
+	</bean>
+
+	<bean class="di_p.Ban" name="ban2">
+		
+		
+		<constructor-arg>
+	    	<list>
+				<bean class="di_p.Stu" name="st1">
+	        		<constructor-arg name="name" value="원빈"/>
+	        		<constructor-arg name="jum" value="79,97,19"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st2">
+	        		<constructor-arg name="name" value="현빈"/>
+	        		<constructor-arg name="jum" value="56,66,77,34"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st3">
+	        		<constructor-arg name="name" value="찬빈"/>
+	        		<constructor-arg name="jum" value="88,77,26,88"/>
+	      		</bean>
+	      		<bean class="di_p.Stu" name="st4">
+	        		<constructor-arg name="name" value="조빈"/>
+	        		<constructor-arg name="jum" value="96,92,98"/>
+	      		</bean>
+	    	</list>
+		</constructor-arg>
+	</bean>
+</beans>

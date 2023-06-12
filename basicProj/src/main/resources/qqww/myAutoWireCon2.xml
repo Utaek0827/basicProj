@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean class="di_p.AutoCar" name="car1" p:name="기본"/>
+	<bean class="di_p.AutoCar" name="car2" p:name="생성1" autowire="constructor"/>
+	<bean class="di_p.AutoCar" name="car3" p:name="생성2" autowire="constructor">
+		<constructor-arg>
+			<bean class="di_p.AutoWindow"></bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="di_p.AutoCar" name="car4" p:name="생성3" autowire="constructor">
+		<!-- sheet를 bean 이름이 sheet인 객채로 명시화-->
+		<constructor-arg name="sheet">
+			<ref bean="sheet"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 
+	생성자가 여러개인 경우
+	생성자의 매개변수가 bean에 가장 많이 적용되는 순서대로 생성자를 적용한다. 
+	생성자의 매개변수 적용 우선순위 byName > byType
+	-->
+	
+	<bean class="di_p.AutoWheel" p:name="한국타이어" p:size="19" name="wh1"/>
+	<bean class="di_p.AutoWheel" p:name="외국타이어" p:size="17" name="wh2"/>
+	
+	<bean class="di_p.AutoWheel" p:name="미국타이어" p:size="20" name="fr"/>
+	<bean class="di_p.AutoWheel" p:name="중국타이어" p:size="21" name="fl"/>
+
+
+	<bean class="di_p.AutoEngine" name="engine" p:power="300" p:name="DONC"/>
+	
+	<bean class="java.util.ArrayList" name="sheet">
+		<constructor-arg>
+			<list>
+				<bean class="di_p.AutoSheet" p:kind="아거가죽"/>	
+				<bean class="di_p.AutoSheet" p:kind="상어가죽"/>
+				<bean class="di_p.AutoSheet" p:kind="붕어가죽"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="di_p.AutoBike" name="bike1" p:name="오토바이" autowire="constructor">
+		<constructor-arg name="wheel">
+			<ref bean="wh2"/>
+		</constructor-arg>
+	
+	</bean>
+	<bean class="di_p.AutoBike" name="bike2" p:name="오토바이" autowire="constructor"/>
+
+	
+	<bean class="di_p.AutoSheet" p:kind="양가죽1" name="qaz"/>	
+	<bean class="di_p.AutoSheet" p:kind="양가죽2" name="wsx"/>
+	<bean class="di_p.AutoSheet" p:kind="양가죽3" name="sh2"/>
+	<bean class="di_p.AutoSheet" p:kind="양가죽4" name="sh3"/>
+
+	<bean class="di_p.AutoTruck" name="tr1" p:name="트럭1"/>
+	
+	<bean class="di_p.AutoTruck" name="tr2" p:name="트럭2">
+		<constructor-arg name="win" >
+			<bean  class="di_p.AutoWindow" ></bean>
+		</constructor-arg>
+	</bean>
+
+	<bean class="di_p.AutoTruck" name="tr3" p:name="트럭3" autowire="constructor">
+
+	</bean>
+	
+	<bean class="di_p.AutoTruck" name="tr4" p:name="트럭4" autowire="constructor">
+		<constructor-arg name="ss">
+			
+			<ref bean="sh2"/>
+		</constructor-arg>
+	</bean>
+
+	<bean class="di_p.AutoTruck" name="tr5" p:name="트럭5" autowire="constructor">
+		<constructor-arg name="ss">
+			<ref bean="sh2"/>
+		</constructor-arg>
+		
+		<constructor-arg name="bb">
+			<ref bean="wh1"/>
+		</constructor-arg>
+	</bean>
+</beans>
+
+

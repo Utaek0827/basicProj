@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+
+>
+	
+	<!-- 인스턴스 생성하여 bean 정의-->
+	<bean name="bbC1" class="di_p.Camera">
+<!--		<property name="name" value="광학카메라"></property>-->
+		<property name="name" value="광학카메라"/>
+		<property name="pixel">
+			<value>50</value>
+		</property>
+	</bean>
+	
+	<bean name="bbHp1" class="di_p.HandPhone">
+		<property name="name" value="거북선"/>
+		<property name="price" value="60"/>
+
+<!--		인스턴스-->
+<!--		<property name="fc" value="bbC1"/>-->
+		<property name="fc" ref="bbC1"/>
+
+		
+	</bean>
+	
+	
+</beans>

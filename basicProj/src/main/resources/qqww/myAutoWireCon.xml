@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean name="car1" class="di_p.AutoCar" p:name="소나타" p:fl-ref="wh2">
+		<property name="engine">
+			<bean class="di_p.AutoEngine" p:name="병렬4기통" p:power="400"/>
+		</property>
+		<property name="fr">
+			<ref bean="wh1"/>
+		</property>
+		
+<!--		<property name="br"> br에 대한 세터가 없어서 에러발생-->
+<!--			<ref bean="fl1"/>-->
+<!--		</property>-->
+		
+		
+		<property name="sheet">
+			<list>
+				<bean class="di_p.AutoSheet" p:kind="소가죽1"/>
+				<bean class="di_p.AutoSheet" p:kind="소가죽2"/>
+				<bean class="di_p.AutoSheet" p:kind="소가죽3"/>
+				<bean class="di_p.AutoSheet" p:kind="소가죽4"/>
+			</list>
+		</property>
+		
+
+		
+	</bean>
+	
+	<bean class="di_p.AutoWheel" p:name="한국타이어" p:size="19" name="wh1"/>
+	<bean class="di_p.AutoWheel" p:name="외국타이어" p:size="17" name="wh2"/>
+	
+	<bean class="di_p.AutoWheel" p:name="미국타이어" p:size="20" name="fr"/>
+	<bean class="di_p.AutoWheel" p:name="중국타이어" p:size="21" name="fl"/>
+	
+	<!-- 
+		autowire="byName" setter 이름이 같은 Bean을 자동 연결 
+		우선순위 : property 명시 > autowire
+	-->
+	
+	<bean name="car2" class="di_p.AutoCar" p:name="아방이" autowire="byName" p:fl-ref="wh2"/>
+	
+	<!-- 
+		autowire="byType" 
+		setter 이름이 같은 Bean을 자동 연결 
+		같은 type의 bean이 여러개일 경우 에러발생
+		열거형(배열, list, set)인 경우 열거 원소 type에 해당하는 bean을 열거데이터로 묶어 처리
+		(컬랙션 클래스로 정의된 bean은 가져오지 않음)
+		우선순위 : property 명시 > autowire
+	-->
+	
+	
+	<bean name="car3" class="di_p.AutoCar" p:name="수크프" autowire="byType"
+	p:fr-ref="fr" p:fl-ref="fl" p:wh1-ref="wh1" p:bl-ref="wh2"
+	/>
+	<bean class="di_p.AutoEngine" name="engine" p:power="300" p:name="DONC"/>
+	
+	<!-- byName 인 경우 setter 이름, 열거형Type, 원소Type이 같은 bean을 참조한다.-->
+	<bean class="java.util.ArrayList" name="sheet">
+		<constructor-arg>
+			<list>
+				<bean class="di_p.AutoSheet" p:kind="아거가죽"/>	
+				<bean class="di_p.AutoSheet" p:kind="상어가죽"/>
+				<bean class="di_p.AutoSheet" p:kind="붕어가죽"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- byType인 경우 원소 Type이 같은 bean을 모두 가져가 묶는다-->
+	<bean class="di_p.AutoSheet" p:kind="양가죽1" name="qaz"/>	
+	<bean class="di_p.AutoSheet" p:kind="양가죽2" name="wsx"/>
+	<bean class="di_p.AutoSheet" p:kind="양가죽3" name="sh2"/>
+	<bean class="di_p.AutoSheet" p:kind="양가죽4" name="sh3"/>
+
+	<bean class="di_p.AutoWindow" p:size="1234" name="qwer"/>
+	
+	<bean class="di_p.AutoBike" name="bike1" autowire="byName" p:name="하야부샤"/>
+	
+	<bean class="di_p.AutoBike" name="bike2" autowire="byType" p:name="붐붐차"
+	p:fr-ref="wh2" p:qaz-ref="wsx"
+	/>
+	
+	<bean name="tr1" class="di_p.AutoTruck" p:name="미국트럭" p:fr-ref="fr" p:fl-ref="fr"
+	p:kind="봉고"
+	p:br-ref="fr" p:bl-ref="fr" p:s1-ref="fr" p:s2-ref="fr" p:engine-ref="engine"
+	p:sh2-ref="qaz"/>
+		
+	<bean name="tr2" class="di_p.AutoTruck" p:name="한국트럭" autowire="byName"
+		p:kind="8돈"
+	/>
+
+	<bean class="di_p.AutoWheel" p:name="한국타이어" p:size="22" name="kl"/>
+	
+
+
+	<bean name="tr3" class="di_p.AutoTruck" p:name="군대트럭" autowire="byType" p:kind="2돈반"
+	p:kl-ref="kl"
+	p:fr-ref="fr" p:fl-ref="fr" p:br-ref="fr" p:bl-ref="fr" p:s1-ref="fr" p:s2-ref="fr"
+	p:sh2-ref="sh3"
+	
+	
+	/>
+
+
+</beans>
+
+

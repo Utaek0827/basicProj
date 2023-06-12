@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
+
+	<bean class="di_p.Seven11" name="s11">
+<!-- 		lookup - method 
+			리턴 타입이 맞아야 한다.
+			매개변수가 없어야한다.
+
+
+	-->
+<!--		<lookup-method name="order" bean="cg1"/> void 불가 -->
+<!-- 		리턴을 bean : cg1 으로 변경한다-->
+			<lookup-method name="cig_1" bean="cg1"/>
+<!--		<lookup-method name="cig_3" bean="cg1"/> 다른 클래스 불가-->
+<!--			<lookup-method name="cig_4" bean="cg1"/> 매개변수 있는 메소드 적용안됨-->
+			<lookup-method name="cig_5" bean="cg1"/>
+			<lookup-method name="cig_6" bean="cg1"/> <!-- private 불가-->
+			<lookup-method name="cig_7" bean="cg1"/> <!-- final 불가-->
+			<lookup-method name="cig_8" bean="cg1"/> <!-- static 불가-->
+			<lookup-method name="cig_9" bean="cg1"/> <!-- abstract일 때는 룩업메소드를 이용해줘야한다.-->
+	</bean>
+	
+	<bean class="di_p.GS25" name="gs">
+		<lookup-method name="ggcc" bean="cg1"/>
+		
+	</bean>
+	
+	
+	<bean class="di_p.Cigarette" name="cg1">
+		<constructor-arg value="bean 으로 변경 말보로"/>
+		<constructor-arg value="4500"/>
+	</bean>
+	
+</beans>
