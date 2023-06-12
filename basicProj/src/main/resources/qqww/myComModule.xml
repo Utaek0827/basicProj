@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
+
+
+	<bean class="di_p.MainBoard" name="desk" p:kind="b450" p:name="스틸레전드"/>
+	<bean class="di_p.MainBoard" name="server1" p:kind="x79" p:name="제온"/>
+	<bean class="di_p.MainBoard" name="server2" p:kind="x79" p:name="제온"/>
+	<bean class="di_p.MainBoard" name="tablet" p:kind="아몰라" p:name="태블릿"/>
+	
+	<bean class="di_p.KeyBoard" name="noteKey" p:kind="무선" p:name="거북이"/>
+	<bean class="di_p.KeyBoard" name="serverKey" p:kind="유선" p:name="뽁뽁이"/>
+
+	<bean class="di_p.Mouse" name="noteMouse" p:kind="유선" p:name="g102"/>
+	<bean class="di_p.Mouse" name="serverMouse" p:kind="무선" p:name="g304"/>
+
+	<bean class="di_p.Moniter" name="serverMoniter" p:kind="LED" p:name="27D"/>
+
+
+
+
+</beans>

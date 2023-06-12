@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
+
+	<bean class="di_p.Computer" name="serverCom" p:name="server1" autowire="byType">
+		<property name="moudle">
+			<list>
+				<ref bean="server1"/>
+				<ref bean="server2"/>
+				<ref bean="serverKey"/>		
+				<ref bean="serverMouse"/>		
+				<ref bean="serverMoniter"/>							
+			</list>
+		</property>
+	</bean>
+
+	<bean class="di_p.Computer" name="note1" p:name="note1">
+		<property name="moudle">
+			<list>
+				<ref bean="desk"/>
+				<ref bean="noteKey"/>		
+				<ref bean="noteMouse"/>		
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="di_p.Computer" name="tablet1" p:name="tablet1">
+		<property name="moudle">
+			<list>
+				<ref bean="tablet"/>
+			</list>
+		</property>
+	</bean>
+	
+
+
+
+</beans>

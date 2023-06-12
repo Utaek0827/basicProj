@@ -103,6 +103,11 @@ class AutoBike{
 	AutoSheet sh1;
 		
 	
+	
+	
+	public AutoBike() {
+	}
+
 	public AutoBike(AutoEngine en, AutoWheel wheel, AutoSheet qaz) {
 		System.out.println("AutoBike 생성자 1");
 		this.engine = en;
