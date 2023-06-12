@@ -90,6 +90,9 @@ class PostStu implements BeanNameAware, InitializingBean, DisposableBean{
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
+		if(kind.equals("직장인")) {
+			avg += 10;
+		}
 		
 	}
 
@@ -136,6 +139,7 @@ class PostProfessor implements BeanNameAware, InitializingBean, DisposableBean{
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
+		
 		
 	}
 

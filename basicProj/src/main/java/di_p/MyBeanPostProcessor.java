@@ -43,9 +43,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 		if(bean.getClass() == PostStu.class) {
 			PostStu st1 = (PostStu)bean;
 			
-			if(st1.kind.equals("직장인")) {
-				st1.avg += 10;
-			}
+			
 		}
 		
 		
