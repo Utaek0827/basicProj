@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+
+	<bean class="anno_p.model.HandPhone" name="ph1" p:name="은하수" p:price="60"/>
+	
+	<bean class="anno_p.model.Camera" name="cc1" p:name="전방카메라" p:pixel="1080"/>
+	<bean class="anno_p.model.Camera" name="cc2" p:name="후방카메라" p:pixel="1080"/>
+	<bean class="anno_p.model.Camera" name="cam" p:name="방수카메라" p:pixel="1080"/>
+
+	<bean class="anno_p.model.Battery" name="bb" p:kind="사랑의배터리"/>
+	
+	<context:annotation-config/>
+
+	
+</beans>

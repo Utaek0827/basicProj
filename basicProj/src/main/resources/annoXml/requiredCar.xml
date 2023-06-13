@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+	<bean class="anno_p.model.Engine" name="en1" p:name="짱짱엔진" p:power="500cc"/>
+	<bean class="anno_p.model.Wheel" name="wh1" p:name="넥센타이어1" p:size="15"/>
+	<bean class="anno_p.model.Wheel" name="wh2" p:name="넥센타이어2" p:size="15"/>
+	<bean class="anno_p.model.Wheel" name="wh3" p:name="넥센타이어3" p:size="15"/>
+	<bean class="anno_p.model.Wheel" name="wh4" p:name="넥센타이어4" p:size="15"/>
+
+	<bean class="anno_p.model.Window" name="win1" p:kind="방탄유리" p:size="20"/>
+	<bean class="anno_p.model.Handle" name="han1" p:size="10"/>
+	<bean class="anno_p.model.Sheet" name="sh1" p:kind="악어가죽"/>
+
+	<bean class="anno_p.model.Car" name="car1" p:name="국산차"/>
+	<bean class="anno_p.model.Bike" name="bike1" p:name="국산바이크"/>
+
+	
+	<context:annotation-config/>
+
+	
+</beans>

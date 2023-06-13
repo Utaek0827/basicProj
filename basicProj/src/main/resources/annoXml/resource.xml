@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+	<bean class="anno_p.model.HambugData" name="hbd1" p:name="빅맥세트"/>
+	
+	<bean class="anno_p.model.Hambug" name="bigMac" p:name="빅맥" p:kind="고기고기" p:kcal="1200"/>
+	<bean class="anno_p.model.Hambug" name="subi" p:name="슈비" p:kind="새우" p:kcal="1000"/>
+	<bean class="anno_p.model.Hambug" name="hb" p:name="휴렛" p:kind="컴퓨터" p:kcal="200"/>
+
+	
+	
+<!--	<bean class="anno_p.model.Drink" name="coke" p:name="콜라" p:size="LLLL"/>-->
+
+	
+	<context:annotation-config/>
+	
+	
+</beans>

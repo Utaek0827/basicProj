@@ -10,14 +10,14 @@ public class AutoWireMain {
 		AbstractApplicationContext context =
 				new ClassPathXmlApplicationContext("qqww/myAutoWireCon2.xml");
 //		
-//		System.out.println(context.getBean("car1"));
-//		System.out.println(context.getBean("car2"));
-//		System.out.println(context.getBean("car3"));
-//		System.out.println(context.getBean("car4"));
+		System.out.println(context.getBean("car1"));
+		System.out.println(context.getBean("car2"));
+		System.out.println(context.getBean("car3"));
+		System.out.println(context.getBean("car4"));
 
 		
-//		System.out.println(context.getBean("bike1"));
-//		System.out.println(context.getBean("bike2"));
+		System.out.println(context.getBean("bike1"));
+		System.out.println(context.getBean("bike2"));
 //
 		System.out.println("======트럭=====");
 		System.out.println(context.getBean("tr1"));

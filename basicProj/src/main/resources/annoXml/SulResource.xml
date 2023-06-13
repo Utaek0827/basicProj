@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+	<bean class="anno_p.model.STableData" name="sd1" p:name="술판1"/>
+	<bean class="anno_p.model.STableData2" name="sd2" p:name="술판2"/>
+	<bean class="anno_p.model.STableData3" name="sd3" p:name="술판3"/>
+	<bean class="anno_p.model.STableData4" name="sd4" p:name="술판4"/>
+
+	
+	
+	
+	<bean class="anno_p.model.Sul" name="su1" p:name="맥주"/>
+	<bean class="anno_p.model.Sul" name="su2" p:name="소주"/>
+	<bean class="anno_p.model.Sul" name="su3" p:name="양주"/>
+	<bean class="anno_p.model.Sul" name="su4" p:name="bomb"/>
+
+	<bean class="anno_p.model.Anju" name="an1" p:name="치킨"/>
+	<bean class="anno_p.model.Anju" name="an2" p:name="곱창"/>
+	<bean class="anno_p.model.Anju" name="an3" p:name="스테이크"/>
+	<bean class="anno_p.model.Anju" name="an4" p:name="회"/>
+
+
+
+	
+	<context:annotation-config/>
+	
+	
+</beans>
