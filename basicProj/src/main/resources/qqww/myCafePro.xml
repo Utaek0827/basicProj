@@ -10,13 +10,41 @@ https://www.springframework.org/schema/context/spring-context-4.3.xsd"
 
 	<context:property-placeholder location="classpath:aass/coffeeMenu.properties"/>
 	
+	<bean name="menu" class="di_p.CafePro">
+		<property name="menu">
+			<map>
+				<entry>
+					<key>
+						<value>${menu1}</value>
+					</key>
+					<value>${americano}</value>
+				</entry>
+				
+				<entry>
+					<key>
+						<value>${menu2}</value>
+					</key>
+					<value>${africano}</value>
+				</entry>	
+				<entry>
+					<key>
+						<value>${menu3}</value>
+					</key>
+					<value>${asiano}</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
 	
-	<bean class="di_p.CafePro" name="order1" p:menu="${americano}" p:cnt="3"/>
-	<bean class="di_p.CafePro" name="order2" p:menu="${africano}" p:cnt="2"/>
-	<bean class="di_p.CafePro" name="order3" p:menu="${americano}" p:cnt="4"/>
-	<bean class="di_p.CafePro" name="order4" p:menu="${asiano}" p:cnt="5"/>
-	<bean class="di_p.CafePro" name="order5" p:menu="${americano}" p:cnt="1"/>
-	<bean class="di_p.CafePro" name="order6" p:menu="${africano}" p:cnt="2"/>
-
+	<bean class="di_p.Order" name="order1" p:cp-ref="menu" p:menu="americano" p:cnt="3"/>
+	<bean class="di_p.Order" name="order2" p:cp-ref="menu" p:menu="africano" p:cnt="2"/>
+	<bean class="di_p.Order" name="order3" p:cp-ref="menu" p:menu="americano" p:cnt="4"/>
+	<bean class="di_p.Order" name="order4" p:cp-ref="menu" p:menu="asiano" p:cnt="5"/>
+	<bean class="di_p.Order" name="order5" p:cp-ref="menu" p:menu="americano" p:cnt="1"/>
+	<bean class="di_p.Order" name="order6" p:cp-ref="menu" p:menu="africano" p:cnt="2"/>
+	
+	
+	
+	
 	
 </beans>
