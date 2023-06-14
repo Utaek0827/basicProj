@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+	<context:annotation-config/>
+	<bean class="anno_com.BeanInit"/>
+	<bean class="anno_com.Bihandle" name="hd7" p:name="xml핸들7"/>
+	<bean class="anno_com.Bihandle" name="hd8" p:name="xml핸들8"/>
+	<bean class="anno_com.Bihandle" name="hd9" p:name="xml핸들9"/>
+
+
+
+</beans>
