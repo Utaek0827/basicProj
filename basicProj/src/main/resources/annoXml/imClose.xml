@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+
+<bean class="anno_dress.Top" name="swimt" p:name="수영복 상의" p:kind="레쉬가드" />
+<bean class="anno_dress.Pants" name="swimb" p:name="수영복 하의" p:kind="레쉬가드" />
+
+<bean class="anno_dress.Cloth" name="swim" p:name="수영복" p:top-ref="swimt" p:pants-ref="swimb"/>
+
+<bean class="anno_dress.Top" name="weddingt" p:name="결혼식 상의" p:kind="정장" />
+<bean class="anno_dress.Pants" name="weddingb" p:name="결혼식 하의" p:kind="정장" />
+
+<bean class="anno_dress.Cloth" name="wedding" p:name="결혼식" p:top-ref="weddingt" p:pants-ref="weddingb"/>
+
+
+
+</beans>

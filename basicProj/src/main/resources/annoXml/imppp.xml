@@ -9,15 +9,6 @@ http://www.springframework.org/schema/context
 https://www.springframework.org/schema/context/spring-context-4.3.xsd"
 >
 
-	<context:annotation-config/>
-	<context:component-scan base-package="anno_p.model"/>
-	
-<!--	<bean class="anno_com.BeanInit"/>-->
-
-	<bean class="anno_p.model.Bihandle" name="hd7" p:name="xml핸들7"/>
-	<bean class="anno_p.model.Bihandle" name="hd8" p:name="xml핸들8"/>
-	<bean class="anno_p.model.Bihandle" name="hd9" p:name="xml핸들9"/>
-
-
+<bean class="anno_p.model.Drink" name="fanta" p:name="팡타" p:size="LLLLLL" />
 
 </beans>

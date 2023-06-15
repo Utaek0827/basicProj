@@ -26,6 +26,7 @@ public class HandPhone {
 	
 	// Autowired를 걸었을 때 해당 객체가 없으면 에러
 	// @Autowired(required = false)를 해주면 없어도 에러발생하지않음
+	
 	@Autowired(required = false)
 	public void setBat(Battery bat) {
 		this.bat = bat;

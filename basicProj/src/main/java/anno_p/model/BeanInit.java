@@ -1,10 +1,14 @@
-package anno_com;
+package anno_p.model;
 
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+//@Component
+@Configuration
 public class BeanInit {
 
 	@Bean
@@ -121,18 +125,7 @@ public class BeanInit {
 		BiWheel res = new BiWheel();
 		res.name = "산악바퀴2";
 	}
-	
-	//xml에서 정의한 bean을 매개변수로 호출가능
-	@Bean
-	Bicycle cycle6(Bihandle hd8, Bihandle hd4){ 
 		
-		Bicycle res = new Bicycle();
-		res.name = "길이보전";
-		System.out.println("cycle6 실행 : "+hd8+","+hd4);
-
-		return res;
-	}
-	
 }
 
 class Bicycle {
