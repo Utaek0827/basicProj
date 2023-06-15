@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop-4.3.xsd"
+
+>
+	<context:component-scan base-package="aop_model"/>
+	
+	<bean class="aop_device.AAADevvv" name="adv"/>
+	
+	<aop:config>
+<!--		<aop:pointcut id="qq" expression="execution(public String aop_model..*())" />-->
+		<aop:pointcut id="strNaver" expression="execution(public String aop_model.naver..*(..))" />
+		<aop:pointcut id="strwebToon" expression="execution(public String aop_model.webToon..*(..))" />
+
+		<aop:aspect ref="adv">
+<!--			<aop:around method="method_1" pointcut-ref="qq"/>-->
+				<aop:around method="method_1" pointcut-ref="strNaver"/>
+				<aop:around method="method_1" pointcut-ref="strwebToon"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="adv">
+				<aop:around method="method_2" pointcut-ref="strNaver"/>
+		</aop:aspect>
+		
+	</aop:config>
+
+	
+	
+</beans>
