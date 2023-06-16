@@ -2,6 +2,7 @@ package aop_device;
 
 import java.util.Arrays;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 public class AAADevvv {
@@ -29,7 +30,7 @@ public class AAADevvv {
 		
 	}
 	
-	void method_2(ProceedingJoinPoint joinPoint) {
+	void method_2(JoinPoint joinPoint) {
 		System.out.println("method_2 실행");
 		
 	}	

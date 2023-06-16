@@ -19,6 +19,11 @@ public class ZoSuk {
 		System.out.println("아버지는 조철왕 실행");
 	}
 	
+	public int mother() {
+		System.out.println("어머니는 말이야 ");
+		return 1234;
+	}
+	
 	public String swd(int no) {
 		System.out.println("swd() 실행" + 100/no);
 		return "서울대";
